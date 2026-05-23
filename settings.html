@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Configurações</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="dashboard.css">
+</head>
+<body>
+
+    <div class="dashboard-wrapper">
+        <header class="main-header">
+            <a href="inicio.html" class="back-link">← Voltar</a>
+            <div class="user-info profile-header">
+                <div class="avatar">JS</div>
+                <div class="user-text">
+                    <h1>Configurações</h1>
+                    <p class="current-date">Ajuste o seu aplicativo</p>
+                </div>
+            </div>
+        </header>
+
+        <div class="page-nav">
+            <a href="inicio.html">Dashboard</a>
+            <a href="perfil.html">Perfil</a>
+            <a href="atividades.html">Atividades</a>
+            <a href="concluido.html">Concluído</a>
+            <a href="contato.html">Contato</a>
+        </div>
+
+        <section class="tasks-container contact-panel settings-panel">
+            <div class="settings-card">
+                <h3>Configurações principais</h3>
+                <div class="option-group">
+                    <div class="option-row">
+                        <div>
+                            <label for="notificacoes">Notificações</label>
+                            <p>Ative para receber alertas de tarefas e prazos.</p>
+                        </div>
+                        <input type="checkbox" id="notificacoes" checked>
+                    </div>
+
+                    <div class="option-row">
+                        <div>
+                            <label for="idioma">Idioma</label>
+                            <p>Escolha entre Português ou Inglês.</p>
+                        </div>
+                        <select id="idioma">
+                            <option value="pt" selected>Português</option>
+                            <option value="en">Inglês</option>
+                        </select>
+                    </div>
+
+                    <div class="option-row">
+                        <div>
+                            <label for="resumo">Resumo diário</label>
+                            <p>Mostrar um resumo das tarefas do dia na tela inicial.</p>
+                        </div>
+                        <input type="checkbox" id="resumo" checked>
+                    </div>
+                </div>
+            </div>
+
+            <div class="settings-card">
+                <h3>Tema do site</h3>
+                <div class="theme-options">
+                    <label class="theme-option" id="option-light">
+                        <input type="radio" name="tema" value="light">
+                        <p>Branco</p>
+                        <span>Aparência clara para uma leitura tradicional.</span>
+                    </label>
+                    <label class="theme-option" id="option-dark">
+                        <input type="radio" name="tema" value="dark">
+                        <p>Preto</p>
+                        <span>Aparência escura para estudar com menos luz.</span>
+                    </label>
+                </div>
+            </div>
+
+            <div class="account-actions">
+                <button id="logoutBtn" class="logout-button">Sair da conta</button>
+            </div>
+        </section>
+    </div>
+
+    <script>
+        function updateThemeSelection(theme) {
+            document.body.classList.toggle('dark-theme', theme === 'dark');
+            localStorage.setItem('tema', theme);
+            document.querySelectorAll('.theme-option').forEach(card => {
+                card.classList.toggle('checked', card.querySelector('input').value === theme);
+            });
+        }
+
+        const savedTheme = localStorage.getItem('tema') || 'light';
+        updateThemeSelection(savedTheme);
+
+        document.querySelectorAll('input[name="tema"]').forEach(input => {
+            input.addEventListener('change', event => {
+                updateThemeSelection(event.target.value);
+            });
+        });
+
+        // Logout handler
+        const logoutBtn = document.getElementById('logoutBtn');
+        if (logoutBtn) {
+            logoutBtn.addEventListener('click', () => {
+                // Limpa dados de sessão/local relevantes
+                try {
+                    localStorage.removeItem('authToken');
+                    localStorage.removeItem('tema');
+                    localStorage.removeItem('completedTasks');
+                } catch (e) {
+                    console.warn('Erro ao limpar storage:', e);
+                }
+                // Redireciona para a página de login
+                window.location.href = 'Abalogin.html';
+            });
+        }
+    </script>
+</body>
+</html>

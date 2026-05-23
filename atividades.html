@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividades</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="dashboard.css">
+</head>
+<body>
+
+    <div class="dashboard-wrapper">
+        <header class="main-header">
+            <a href="inicio.html" class="back-link">← Voltar</a>
+            <div class="user-info profile-header">
+                <div class="avatar">JS</div>
+                <div class="user-text">
+                    <h1>Atividades</h1>
+                    <p class="current-date">Escolha sua matéria</p>
+                </div>
+            </div>
+            <a href="settings.html" class="settings-btn">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"></circle><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"></path></svg>
+            </a>
+        </header>
+
+        <div class="page-nav">
+            <a href="inicio.html">Dashboard</a>
+            <a href="atividades.html" class="active">Atividades</a>
+            <a href="concluido.html">Concluído</a>
+            <a href="perfil.html">Perfil</a>
+            <a href="contato.html">Contato</a>
+        </div>
+
+        <section class="tasks-container">
+            <div class="tasks-header">
+                <h2>Atividades por matéria</h2>
+            </div>
+
+            <div class="subject-tags">
+                <span class="subject-tag">Matemática</span>
+                <span class="subject-tag">Literatura</span>
+                <span class="subject-tag">Física</span>
+                <span class="subject-tag">Programação</span>
+            </div>
+
+            <div class="tasks-list">
+                <div class="task-item" data-task-id="integral-1" data-task-name="Revisar integrais definidas" data-task-subject="Matemática" data-task-date="Veja o material de apoio" data-task-detail="Confira o caderno digital, revise exercícios e salve as fórmulas importantes.">
+                    <div class="task-checkbox"></div>
+                    <div class="task-details">
+                        <p class="task-name">Revisar integrais definidas</p>
+                        <div class="task-meta">
+                            <span class="badge badge-matematica">Matemática</span>
+                            <span class="task-date">Veja o material de apoio</span>
+                        </div>
+                        <div class="task-extra hidden">
+                            <p>Confira o caderno digital, revise exercícios e salve as fórmulas importantes.</p>
+                            <button type="button" class="complete-button">Marcar como concluído</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="task-item" data-task-id="literatura-1" data-task-name="Resumo do Capítulo 6" data-task-subject="Literatura" data-task-date="Próximo encontro: 22/05" data-task-detail="Leia com atenção os trechos destacados e prepare perguntas para a aula.">
+                    <div class="task-checkbox"></div>
+                    <div class="task-details">
+                        <p class="task-name">Resumo do Capítulo 6</p>
+                        <div class="task-meta">
+                            <span class="badge badge-literatura">Literatura</span>
+                            <span class="task-date">Próximo encontro: 22/05</span>
+                        </div>
+                        <div class="task-extra hidden">
+                            <p>Leia com atenção os trechos destacados e prepare perguntas para a aula.</p>
+                            <button type="button" class="complete-button">Marcar como concluído</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="task-item" data-task-id="fisica-1" data-task-name="Simulado de Leis de Newton" data-task-subject="Física" data-task-date="Entrega em 24/05" data-task-detail="Resolva todos os exemplos do capítulo e confira as unidades nas respostas.">
+                    <div class="task-checkbox"></div>
+                    <div class="task-details">
+                        <p class="task-name">Simulado de Leis de Newton</p>
+                        <div class="task-meta">
+                            <span class="badge badge-fisica">Física</span>
+                            <span class="task-date">Entrega em 24/05</span>
+                        </div>
+                        <div class="task-extra hidden">
+                            <p>Resolva todos os exemplos do capítulo e confira as unidades nas respostas.</p>
+                            <button type="button" class="complete-button">Marcar como concluído</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <script>
+        const theme = localStorage.getItem('tema') || 'light';
+        document.body.classList.toggle('dark-theme', theme === 'dark');
+
+        function getCompletedTasks() {
+            return JSON.parse(localStorage.getItem('completedTasks') || '[]');
+        }
+
+        function saveCompletedTask(task) {
+            const completed = getCompletedTasks();
+            if (!completed.some(item => item.id === task.id)) {
+                completed.push(task);
+                localStorage.setItem('completedTasks', JSON.stringify(completed));
+            }
+        }
+
+        document.querySelectorAll('.task-item').forEach(item => {
+            const extra = item.querySelector('.task-extra');
+            const completeButton = item.querySelector('.complete-button');
+
+            item.addEventListener('click', event => {
+                if (event.target.closest('.complete-button')) return;
+                item.classList.toggle('active');
+                if (extra) {
+                    extra.classList.toggle('hidden');
+                }
+            });
+
+            if (completeButton) {
+                completeButton.addEventListener('click', event => {
+                    event.stopPropagation();
+                    const task = {
+                        id: item.dataset.taskId,
+                        name: item.dataset.taskName,
+                        subject: item.dataset.taskSubject,
+                        date: item.dataset.taskDate,
+                        detail: item.dataset.taskDetail
+                    };
+                    saveCompletedTask(task);
+                    window.location.href = 'concluido.html';
+                });
+            }
+        });
+    </script>
+</body>
+</html>

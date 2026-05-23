@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Concluído</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="dashboard.css">
+</head>
+<body>
+
+    <div class="dashboard-wrapper">
+        <header class="main-header">
+            <a href="inicio.html" class="back-link">← Voltar</a>
+            <div class="user-info profile-header">
+                <div class="avatar">JS</div>
+                <div class="user-text">
+                    <h1>Concluído</h1>
+                    <p class="current-date">Suas últimas tarefas finalizadas</p>
+                </div>
+            </div>
+            <a href="settings.html" class="settings-btn">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"></circle><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"></path></svg>
+            </a>
+        </header>
+
+        <div class="page-nav">
+            <a href="inicio.html">Dashboard</a>
+            <a href="atividades.html">Atividades</a>
+            <a href="concluido.html" class="active">Concluído</a>
+            <a href="perfil.html">Perfil</a>
+            <a href="contato.html">Contato</a>
+        </div>
+
+        <section class="tasks-container">
+            <div class="tasks-header">
+                <h2>Tarefas concluídas</h2>
+            </div>
+
+            <div class="completed-list"></div>
+            <p class="empty-state hidden">Nenhuma tarefa concluída ainda. Marque uma atividade como concluída na página de Atividades.</p>
+            <button type="button" class="clear-completed hidden">Limpar concluídos</button>
+        </section>
+    </div>
+
+    <script>
+        const theme = localStorage.getItem('tema') || 'light';
+        document.body.classList.toggle('dark-theme', theme === 'dark');
+
+        const completedData = JSON.parse(localStorage.getItem('completedTasks') || '[]');
+        const completedList = document.querySelector('.completed-list');
+        const emptyState = document.querySelector('.empty-state');
+        const clearButton = document.querySelector('.clear-completed');
+
+        if (completedData.length === 0) {
+            emptyState.classList.remove('hidden');
+        } else {
+            completedData.forEach(task => {
+                const card = document.createElement('div');
+                card.className = 'completed-card';
+                card.innerHTML = `
+                    <h3>${task.name}</h3>
+                    <p><strong>Matéria:</strong> ${task.subject}</p>
+                    <p><strong>Detalhes:</strong> ${task.detail}</p>
+                    <p><strong>Prazo/Observação:</strong> ${task.date}</p>
+                `;
+                completedList.appendChild(card);
+            });
+            clearButton.classList.remove('hidden');
+        }
+
+        clearButton.addEventListener('click', () => {
+            localStorage.removeItem('completedTasks');
+            window.location.reload();
+        });
+    </script>
+</body>
+</html>

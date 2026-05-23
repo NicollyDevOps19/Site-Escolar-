@@ -1,0 +1,203 @@
+/* Reset básico de estilos */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* Fundo sutilmente degradê claro conforme a imagem */
+    background: linear-gradient(135deg, #f4f6fa 0%, #edf0f5 100%);
+    position: relative;
+    padding: 20px;
+}
+
+/* Card de Login Principal */
+.login-container {
+    background-color: #ffffff;
+    width: 100%;
+    max-width: 440px;
+    padding: 40px 35px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
+    text-align: center;
+}
+
+/* Ícone Roxo Superior */
+.logo-box {
+    background-color: #5d51e7;
+    width: 60px;
+    height: 60px;
+    border-radius: 14px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto 24px auto;
+}
+
+.logo-box svg {
+    width: 30px;
+    height: 30px;
+    color: #ffffff;
+}
+
+/* Títulos e Textos */
+h2 {
+    color: #1e1e24;
+    font-size: 1.45rem;
+    font-weight: 600;
+    margin-bottom: 6px;
+}
+
+.subtitle {
+    color: #8c8c9a;
+    font-size: 0.88rem;
+    margin-bottom: 32px;
+}
+
+/* Formulários e Inputs */
+.input-group {
+    text-align: left;
+    margin-bottom: 18px;
+}
+
+.input-group label {
+    display: block;
+    color: #1e1e24;
+    font-size: 0.85rem;
+    font-weight: 500;
+    margin-bottom: 8px;
+}
+
+.input-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.input-wrapper input {
+    width: 100%;
+    background-color: #f7f8fa;
+    border: 1px solid #eef0f4;
+    border-radius: 12px;
+    padding: 14px 16px 14px 46px; /* Espaço para o ícone esquerdo */
+    font-size: 0.95rem;
+    color: #1e1e24;
+    outline: none;
+    transition: border-color 0.2s;
+}
+
+.input-wrapper input::placeholder {
+    color: #bcbcc6;
+}
+
+/* Cor do texto do input quando preenchido (como as bolinhas da senha) */
+.input-wrapper input[type="password"] {
+    color: #8c8c9a;
+    letter-spacing: 2px;
+}
+
+/* Ícones internos dos Inputs */
+.input-icon {
+    position: absolute;
+    left: 16px;
+    width: 18px;
+    height: 18px;
+    color: #8c8c9a;
+    pointer-events: none;
+}
+
+/* Botão de alternar visibilidade da senha (Olho) */
+.toggle-password {
+    position: absolute;
+    right: 16px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #8c8c9a;
+    display: flex;
+    align-items: center;
+    padding: 0;
+}
+
+.toggle-password svg {
+    width: 20px;
+    height: 20px;
+}
+
+/* Link Esquceu a senha */
+.forgot-password-wrapper {
+    text-align: right;
+    margin-top: -6px;
+    margin-bottom: 26px;
+}
+
+.forgot-password {
+    color: #5d51e7;
+    font-size: 0.82rem;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.forgot-password:hover {
+    text-decoration: underline;
+}
+
+/* Botão Entrar */
+.btn-submit {
+    width: 100%;
+    background-color: #5d51e7;
+    color: #ffffff;
+    border: none;
+    padding: 15px;
+    border-radius: 12px;
+    font-size: 0.95rem;
+    font-weight: 500;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(93, 81, 231, 0.2);
+    transition: background-color 0.2s;
+    margin-bottom: 24px;
+}
+
+.btn-submit:hover {
+    background-color: #4b3fd3;
+}
+
+/* Rodapé do Card */
+.footer-text {
+    color: #8c8c9a;
+    font-size: 0.85rem;
+}
+
+.footer-text a {
+    color: #5d51e7;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.footer-text a:hover {
+    text-decoration: underline;
+}
+
+/* Botão flutuante de ajuda (?) no canto inferior direito */
+.help-button {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    width: 32px;
+    height: 32px;
+    background-color: #222222;
+    color: #ffffff;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 0.85rem;
+    font-weight: 600;
+    cursor: pointer;
+}

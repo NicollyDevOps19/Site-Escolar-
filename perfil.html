@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perfil do Aluno</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="dashboard.css">
+</head>
+<body>
+
+    <div class="dashboard-wrapper">
+        <header class="main-header">
+            <a href="inicio.html" class="back-link">← Voltar</a>
+            <div class="user-info profile-header">
+                <div class="avatar">JS</div>
+                <div class="user-text">
+                    <h1>João Silva</h1>
+                    <p class="current-date">Aluno de Engenharia</p>
+                </div>
+            </div>
+            <a href="settings.html" class="settings-btn">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"></circle><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"></path></svg>
+            </a>
+        </header>
+
+        <div class="page-nav">
+            <a href="inicio.html">Dashboard</a>
+            <a href="atividades.html">Atividades</a>
+            <a href="concluido.html">Concluído</a>
+            <a href="perfil.html" class="active">Perfil</a>
+            <a href="contato.html">Contato</a>
+        </div>
+
+        <section class="tasks-container profile-panel">
+            <div class="tasks-header">
+                <h2>Meu Perfil</h2>
+                <a href="#" class="view-all">Editar perfil</a>
+            </div>
+
+            <div class="profile-details">
+                <div>
+                    <p class="profile-label">Nome</p>
+                    <p class="profile-value">João Silva</p>
+                </div>
+                <div>
+                    <p class="profile-label">Curso</p>
+                    <p class="profile-value">Engenharia</p>
+                </div>
+                <div>
+                    <p class="profile-label">Matéria atual</p>
+                    <p class="profile-value">Cálculo II</p>
+                </div>
+                <div>
+                    <p class="profile-label">Status</p>
+                    <p class="profile-value">Em estudo</p>
+                </div>
+            </div>
+
+            <div class="subject-summary">
+                <h3>Matéria em foco</h3>
+                <p>Hoje você está estudando <strong>Matemática</strong> com foco em integrais e aplicações.</p>
+            </div>
+        </section>
+    </div>
+
+    <script>
+        const theme = localStorage.getItem('tema') || 'light';
+        document.body.classList.toggle('dark-theme', theme === 'dark');
+    </script>
+</body>
+</html>
